@@ -14,7 +14,6 @@ body{
 
 #login{
     margin: initial !important;
-    background: white;
     padding: 15px;
     backdrop-filter: 4px;
 }
@@ -24,10 +23,11 @@ p#backtoblog a{
 p#nav a{
     color: black !important;
 }
-.login form{
+.loginform{
     border-radius: 10px;
     border: none;
     box-shadow: none !important;
+    background: none !important;
 }
 p.message{
     border-radius: 10px;
