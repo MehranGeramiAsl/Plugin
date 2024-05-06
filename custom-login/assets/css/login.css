@@ -1,0 +1,67 @@
+body{
+    
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+.login h1 a{
+    height: 94px;
+}
+.language-switcher {
+    display: none !important;
+}
+
+#login{
+    margin: initial !important;
+    background: white;
+    padding: 15px;
+    backdrop-filter: 4px;
+}
+p#backtoblog a{
+    color: black !important;
+}
+p#nav a{
+    color: black !important;
+}
+.login form{
+    border-radius: 10px;
+    border: none;
+    box-shadow: none !important;
+}
+p.message{
+    border-radius: 10px;
+}
+p.forgetmenot input{
+    display: none;
+}
+p.forgetmenot label{
+    position: relative;
+    padding-right: 33px;
+}
+p.forgetmenot label:before{
+    background: rgb(221, 238, 135);
+    content: "";
+    width: 30px;
+    height: 16px;
+    border-radius: 60px;
+    position: absolute;
+    right: 0;
+    top: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,16);
+}
+p.forgetmenot label:after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: rgb(251, 18, 18);
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    transition: .3s ease-in-out;
+}
+p.forgetmenot input:checked + label:after{
+    right: 15px;
+    background: rgb(31, 146, 241);
+}

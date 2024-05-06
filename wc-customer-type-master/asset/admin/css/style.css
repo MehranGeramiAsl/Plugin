@@ -1,0 +1,233 @@
+.wc-customer-type-order-modal {
+    position: fixed;
+    z-index: 999999999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.wc-customer-type-order-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.wc-customer-type-order-modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.wc-customer-type-order-modal-content .close:hover,
+.wc-customer-type-order-modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#wc-customer-type-order-modal-body {
+    margin: 30px 0;
+}
+
+/* Fix column in WooCommerce */
+.edit-php.post-type-product .column-last_update_from_api {
+    width: 10%;
+}
+
+/* Setting Page */
+.wc-customer-type-section-settings {
+    width: 30%;
+    background: #fff;
+    padding: 8px 15px 8px 8px;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.wc-customer-type-section-settings img {
+    display: inline;
+    margin-left: 5px;
+    width: 35px;
+    vertical-align: -12px;
+}
+
+.wc-customer-type-cronjob-table td {
+    font-size: 11px;
+    padding: 5px 10px !important;
+}
+
+.wc-customer-type-help-download-video {
+    background: #4caf50;
+    min-width: 180px;
+    height: 25px;
+    float: left;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.wc-customer-type-help-download-video:hover {
+    background: #2196f3;
+}
+
+/* Helper */
+.wc-customer-type-modal-clearfix {
+    clear: both;
+}
+
+.wc-customer-type-d-inline-block {
+    display: inline-block;
+}
+
+.wc-customer-type-rtl {
+    direction: rtl;
+}
+
+.wc-customer-type-ltr {
+    direction: ltr;
+}
+
+.wc-customer-type-text-center {
+    text-align: center;
+}
+
+.wc-customer-type-text-right {
+    text-align: right;
+}
+
+.wc-customer-type-text-left {
+    text-align: left;
+}
+
+.wc-customer-type-pull-right {
+    float: right;
+}
+
+.wc-customer-type-pull-left {
+    float: left;
+}
+
+.wc-customer-type-width-100 {
+    width: 100px;
+}
+
+.wc-customer-type-m-t-5 {
+    margin-top: 5px;
+}
+
+.wc-customer-type-text-decoration-none {
+    text-decoration: none;
+}
+
+/* Create WooCommerce Product in WCCustomerAddress */
+.wc-customer-type-create-product-thickbox-info {
+    padding: 15px;
+    width: 90%;
+}
+
+.wc-customer-type-create-product-thickbox-info .wc-customer-type-img-product-div {
+    width: 90px;
+    height: 80px;
+}
+
+.wc-customer-type-create-product-thickbox-info .wc-customer-type-img-product {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top: 2px;
+}
+
+.wc-customer-type-product-children-box {
+    border: 1px solid rgba(227, 227, 227, 0.56);
+    padding: 15px;
+    margin: 20px auto;
+}
+
+div[data-show-wc-customer-type-product-form] {
+    border-top: 1px solid rgba(227, 227, 227, 0.56);
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.wc-customer-type-product-children-box.created {
+    border: 1px solid #39ab00;
+}
+
+.wc-customer-type-product-children-box img.product_image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+}
+
+div[data-wc-customer-type-create-product-action] a.drclubs_code {
+    display: block;
+    text-decoration: none;
+    background: #39ab00;
+    color: #fff;
+    transition: 1s all;
+    text-align: center;
+    margin-top: 5px;
+}
+
+div[data-wc-customer-type-create-product-action] a.drclubs_code:hover {
+    background: #ab0000;
+}
+
+.wc-customer-type-product-children-box form .form-table .td {
+    margin-bottom: 5px !important;
+    padding: 10px 10px !important;
+}
+
+.wc-customer-type-error-group-taxonomy {
+    background: #ececec;
+    padding: 15px;
+    border-radius: 5px;
+    color: #737373;
+    margin-top: 30px;
+    direction: rtl;
+    text-align: right;
+    line-height: 25px;
+}
+
+/* Product Group Page */
+.wc-customer-type-disable-group-icon {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Fix column in WooCommerce */
+.edit-php.post-type-product .column-disable_update_software {
+    width: 12%;
+}
+
+/* Send Order Modal */
+.wc-customer-type-send-order-modal-table {
+    direction: rtl;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.wc-customer-type-send-order-modal-table td {
+    margin-bottom: 5px !important;
+    padding: 10px 10px !important;
+}
+
+/* Pre */
+.wc-customer-type-pre pre {
+    white-space: pre;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}

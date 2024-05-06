@@ -1,0 +1,64 @@
+/* Setting Page */
+.wc-product-tax-price-section-settings {
+    width: 30%;
+    background: #fff;
+    padding: 8px 15px 8px 8px;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.wc-product-tax-price-section-settings img {
+    display: inline;
+    margin-left: 5px;
+    width: 35px;
+    vertical-align: -12px;
+}
+
+/* Helper */
+.wc-product-tax-price-modal-clearfix {
+    clear: both;
+}
+
+.wc-product-tax-price-d-inline-block {
+    display: inline-block;
+}
+
+.wc-product-tax-price-rtl {
+    direction: rtl;
+}
+
+.wc-product-tax-price-ltr {
+    direction: ltr;
+}
+
+.wc-product-tax-price-text-center {
+    text-align: center;
+}
+
+.wc-product-tax-price-text-right {
+    text-align: right;
+}
+
+.wc-product-tax-price-text-left {
+    text-align: left;
+}
+
+.wc-product-tax-price-pull-right {
+    float: right;
+}
+
+.wc-product-tax-price-pull-left {
+    float: left;
+}
+
+.wc-product-tax-price-width-100 {
+    width: 100px;
+}
+
+.wc-product-tax-price-m-t-5 {
+    margin-top: 5px;
+}
+
+.wc-product-tax-price-text-decoration-none {
+    text-decoration: none;
+}
