@@ -14,7 +14,7 @@ body{
 
 #login{
     margin: initial !important;
-    background: white;
+    background: rgb(202, 143, 143);
     padding: 15px;
     backdrop-filter: 4px;
 }
