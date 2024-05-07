@@ -44,6 +44,13 @@
 
         "
      );
+     wp_enqueue_script( 
+        'login-script', 
+        CUSTOM_LOGIN_JS_URL . 'login.js', 
+        [], 
+        WP_DEBUG ? time() : CUSTOM_LOGIN_VER, 
+         
+     );
  });
 
 
