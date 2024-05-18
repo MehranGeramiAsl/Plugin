@@ -11,13 +11,24 @@
  define('CUSTOM_LOGIN_CSS_URL', CUSTOM_LOGIN_ASSETS_URL. 'css/');
  define('CUSTOM_LOGIN_JS_URL', CUSTOM_LOGIN_ASSETS_URL. 'js/');
  define('CUSTOM_LOGIN_IMAGES_URL', CUSTOM_LOGIN_ASSETS_URL. 'images/');
- 
+ define('CUSTOM_LOGIN_ADMIN_PATH', plugin_dir_path(__FILE__) . 'admin/');
+ define('CUSTOM_LOGIN_ADMIN_VIEW_PATH', plugin_dir_path(__FILE__) . 'view/');
  add_action('login_enqueue_scripts', function() {
  
+
+    wp_register_style( 
+        'bootstrap', 
+        CUSTOM_LOGIN_CSS_URL . 'bootstrap.min.css', 
+        [], 
+        '5.3.0', 
+        'all' 
+    );
+
+
      wp_enqueue_style(
          'login-style',
          CUSTOM_LOGIN_CSS_URL . 'login.css',
-         [],
+         ['bootstrap'],
          WP_DEBUG ? time() : CUSTOM_LOGIN_VER
          // 'screen and (max-width: 600px)'
      );
@@ -44,14 +55,64 @@
 
         "
      );
+
+     wp_register_script( 
+        'bootstrap', 
+        CUSTOM_LOGIN_JS_URL . 'bootstrap.bundle.min.js',
+        [], 
+        '5.3.0', 
+        true
+     );
+
      wp_enqueue_script( 
         'login-script', 
         CUSTOM_LOGIN_JS_URL . 'login.js', 
-        [], 
+        ['jquery', 'underscore','bootstrap'], 
         WP_DEBUG ? time() : CUSTOM_LOGIN_VER, 
          
      );
- });
+
+     $js_options = [
+        'username_min_lenght' => 5,
+        'password_min_lenght' => 6,
+     ];
+
+     wp_add_inline_script( 
+        
+        'login-script', 
+        'const login_js_data = ' . json_encode( $js_options ), 
+         'before',
+     );
+    //  wp_localize_script(
+    //     'login-script',
+    //     'login_js_data',
+    //     $js_options,
+    //  );
+    });
+  
+ if(is_admin()){
+    include(CUSTOM_LOGIN_ADMIN_PATH . 'setting.php');
+ }
+
+    //  wp_enqueue_script( 
+    //     'typewrite', 
+    //     CUSTOM_LOGIN_JS_URL . 'typewriter.js', 
+    //     [], 
+    //     WP_DEBUG ? time() : CUSTOM_LOGIN_VER,
+    //     true, 
+    //  );
+
+    //  $text = 'سلام خدمت شما دوستان محترم';
+    //  wp_add_inline_script( 
+    //     'typewrite',
+    //     "new Typewriter('#login-message',{
+    //         strings: ['$text'],
+    //         autoStart: true,
+    //     });"
+    // );
+ 
+
+
 
 
 // add_action('login_head',function(){

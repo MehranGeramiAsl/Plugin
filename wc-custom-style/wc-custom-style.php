@@ -24,3 +24,14 @@ include(custom_style_menu_admin . '/menus.php');
         printf('<script>%s</script>', $savedscript);
     });
 }
+
+add_action('login_enqueue_scripts', function(){
+    
+    wp_enqueue_script( 
+        'custom-script', 
+        CUSTOM_LOGIN_JS_URL . 'custom-style.js', 
+        ['underscore'], 
+        WP_DEBUG ? time() : CUSTOM_LOGIN_VER, 
+         
+     );
+});

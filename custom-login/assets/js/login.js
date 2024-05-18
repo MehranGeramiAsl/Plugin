@@ -1,3 +1,6 @@
+
+
+console.log(jQuery);
 window.addEventListener('load', function() {
 
 let submi_btn = document.getElementById('wp-submit');
@@ -12,14 +15,14 @@ let pass_valid = false , user_valid = false;
 
 user_field.addEventListener('input', function(){
 
-user_valid = this.value.length >= 4;
+user_valid = this.value.length >= login_js_data.username_min_lenght;
 submi_btn.disabled = !(user_valid && pass_valid);
 
 });
 
 user_pass.addEventListener('input', function(){
 
-    pass_valid = this.value.length >= 8;
+    pass_valid = this.value.length >= login_js_data.password_min_lenght;
     submi_btn.disabled = !(user_valid && pass_valid);
     });
 

@@ -9,14 +9,14 @@ global $custom_style_notices;
         <p><?php echo $custom_style_notices['massege'];?></p>
     </div>
     <?php endif;?>
-<table class="form-table">
-    <tbody>
-        <tr>
-            <th scope="row">
+<table      <th scope="row">
                 <label for="custom-style">استایل سفارشی</label>
             </th>
             <td>
-            <textarea  class="large-text code" name="custom-style" id="custom-style" cols="30" rows="10" placeholder="استایل سفارشی شما..."></textarea>
+         class="form-table">
+    <tbody>
+        <tr>
+          <textarea  class="large-text code" name="custom-style" id="custom-style" cols="30" rows="10" placeholder="استایل سفارشی شما..."></textarea>
             
             </td>
         </tr>
