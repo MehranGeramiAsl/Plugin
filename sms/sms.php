@@ -99,6 +99,32 @@ function order_status_sms_notifications_field_callback($args) {
     <label for="sms_enabled_<?php echo $status_key; ?>"><input type="checkbox" id="sms_enabled_<?php echo $status_key; ?>" name="order_status_sms_notifications_settings[<?php echo $status_key; ?>][sms_enabled]" <?php checked($status_settings['sms_enabled'], true); ?>> Enable SMS</label>
     <?php
 }
+    // // Prepare SMS content
+    // $sms_content = "Dear {$customer->get_first_name()}, your order {$order_number} status has changed to {$new_status}. Total amount: {$order_total}";
+
+    // // Send SMS using SMS panel API
+    // $api_url = 'YOUR_SMS_PANEL_API_URL';
+    // $api_username = 'YOUR_API_USERNAME';
+    // $api_password = 'YOUR_API_PASSWORD';
+
+    // $sms_data = array(
+    //     'to' => $customer_phone,
+    //     'message' => $sms_content,
+    //     // Add other required parameters for your SMS panel API
+    // );
+
+    // // Send SMS using cURL
+    // $ch = curl_init($api_url);
+    // curl_setopt($ch, CURLOPT_POST, true);
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($sms_data));
+    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    // curl_setopt($ch, CURLOPT_USERPWD, "$api_username:$api_password");
+    // $response = curl_exec($ch);
+    // curl_close($ch);
+
+    // // Log the SMS response
+    // error_log("SMS response: $response");
+
 
 // Hook into order status change
 // add_action('woocommerce_order_status_changed', 'send_sms_notification', 10, 4);

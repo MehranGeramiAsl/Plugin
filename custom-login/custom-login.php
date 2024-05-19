@@ -35,9 +35,13 @@
 
     $background_image = CUSTOM_LOGIN_IMAGES_URL . 'Hinza-background.jpg';
     $bell_image       = CUSTOM_LOGIN_IMAGES_URL . 'notificator.svg';
-    $colors           = ['red', 'green', 'blue', '#e4e4e3', 'white','#9e84a0','#a1b65e','#627ba4','#6497b1'];
-    $background_color = $colors[rand(0,count($colors)-1)];
-
+    $background_color = '#fff';
+   //  $colors           = ['red', 'green', 'blue', '#e4e4e3', 'white','#9e84a0','#a1b65e','#627ba4','#6497b1'];
+   //  $background_color = $colors[rand(0,count($colors)-1)];
+     $login_settings = get_option('custom_login', []);
+     if (isset($login_settings['column_color'] ) && $login_settings['column_color']){
+         $background_color = $login_settings['column_color'];
+     }
 
      wp_add_inline_style( 
         'login-style',
