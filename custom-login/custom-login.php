@@ -36,16 +36,23 @@
     $background_image = CUSTOM_LOGIN_IMAGES_URL . 'Hinza-background.jpg';
     $bell_image       = CUSTOM_LOGIN_IMAGES_URL . 'notificator.svg';
     $background_color = '#fff';
+    $css              = '';
    //  $colors           = ['red', 'green', 'blue', '#e4e4e3', 'white','#9e84a0','#a1b65e','#627ba4','#6497b1'];
    //  $background_color = $colors[rand(0,count($colors)-1)];
      $login_settings = get_option('custom_login', []);
      if (isset($login_settings['column_color'] ) && $login_settings['column_color']){
          $background_color = $login_settings['column_color'];
      }
-
+     if (isset($login_settings['background'] ) && $login_settings['background']){
+      $background_image = $login_settings['background'];
+  }
+     if (isset($login_settings['css'] ) && $login_settings['css']){
+    $css = $login_settings['css'];
+    }
      wp_add_inline_style( 
         'login-style',
         "
+        $css
         #login{
             background-color: $background_color;
         }
@@ -87,26 +94,26 @@
         'const login_js_data = ' . json_encode( $js_options ), 
          'before',
      );
-    //  wp_localize_script(
-    //     'login-script',
-    //     'login_js_data',
-    //     $js_options,
-    //  );
+     wp_localize_script(
+        'login-script',
+        'login_js_data',
+        $js_options,
+     );
     });
   
  if(is_admin()){
     include(CUSTOM_LOGIN_ADMIN_PATH . 'setting.php');
  }
 
-    //  wp_enqueue_script( 
-    //     'typewrite', 
-    //     CUSTOM_LOGIN_JS_URL . 'typewriter.js', 
-    //     [], 
-    //     WP_DEBUG ? time() : CUSTOM_LOGIN_VER,
-    //     true, 
-    //  );
+     wp_enqueue_script( 
+        'typewrite', 
+        CUSTOM_LOGIN_JS_URL . 'typewriter.js', 
+        [], 
+        WP_DEBUG ? time() : CUSTOM_LOGIN_VER,
+        true, 
+     );
 
-    //  $text = 'سلام خدمت شما دوستان محترم';
+     $text = 'سلام خدمت شما دوستان محترم';
     //  wp_add_inline_script( 
     //     'typewrite',
     //     "new Typewriter('#login-message',{
@@ -115,9 +122,6 @@
     //     });"
     // );
  
-
-
-
 
 // add_action('login_head',function(){
 //     echo '<link rel="stylesheet" type="text/css" href="'.CUSTOM_LOGIN_CSS_URL.  'login.css"/>';

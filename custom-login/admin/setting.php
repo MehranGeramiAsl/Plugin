@@ -22,6 +22,8 @@ function custom_login_setting_menu(){
 
             $settings                 = get_option('custom_login' , []);
             $settings['column_color'] = sanitize_hex_color($_POST['column_color']);
+            $settings['background']   = esc_url_raw($_POST['background']);
+            $settings['css']          = $_POST['css_code'];
             update_option('custom_login' , $settings);
             add_action('admin_notices', 'custom_login_success_notices');
         }
@@ -43,6 +45,14 @@ function custom_login_success_notices(){
 }
 
 function custom_login_load_setting_script(){
+    wp_enqueue_media();
+    $cm_setting = wp_enqueue_code_editor([
+        'type'       => 'text/css',
+        // 'codemirror' => [
+        //     'lineNumbers' => false,
+        // ]
+
+    ]);
     wp_enqueue_style(
         'wp-color-picker',
     );
@@ -52,5 +62,5 @@ function custom_login_load_setting_script(){
         ['wp-color-picker'], 
         WP_DEBUG ? time() : CUSTOM_LOGIN_VER, 
     );
-
+    wp_localize_script('custom-login-setting' , 'cm_setting', $cm_setting );
 }
